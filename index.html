@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Softworks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Set background to black */
+            color: white; /* Set text color to white */
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        .header h1 {
+            color: white;
+            margin: 0;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        .nav a {
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-align: center;
+        }
+        .nav a:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 20px;
+            display: none;
+        }
+        .exploits-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Reduce spacing between boxes */
+            flex-wrap: wrap;
+        }
+        .exploit-box {
+            background-color: #222;
+            width: 250px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        .exploit-box img {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px 10px 0 0;
+        }
+        .exploit-box h3 {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .exploit-box p {
+            text-align: center;
+            padding: 0 10px;
+        }
+        .download-btn {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .download-btn:hover {
+            background-color: #218838;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Ultra Softworks</h1>
+    </div>
+
+    <div class="nav">
+        <a href="#" onclick="showSection('exploits')">Exploits</a>
+        <a href="#" onclick="showSection('team')">Team</a>
+        <a href="#" onclick="showSection('discord')">Discord</a>
+    </div>
+
+    <div id="exploits" class="content active">
+        <h2>Available Exploits</h2>
+        <div class="exploits-section">
+            <div class="exploit-box">
+                <img src="https://cdn.discordapp.com/attachments/1291895264914706454/1291926604641075211/image.png?ex=6701dfe9&is=67008e69&hm=cb91054fff94f10d23f1511edb3bcc4262045ef60bd506510d9639beeb74938e&" alt="Ultra X">
+                <h3>Ultra X</h3>
+                <p>Ultra X is a level 8, 100% UNC Roblox Windows PC Executor.</p>
+                <a href="#" class="download-btn">Download</a>
+            </div>
+            <div class="exploit-box">
+                <img src="https://cdn.discordapp.com/attachments/1291894380684382218/1291927125879685240/image.png?ex=6701e065&is=67008ee5&hm=de05564fb3d931788b3245459a7a9a989fcdad94ad95dc17452542dc01604c53&" alt="Velocity">
+                <h3>Velocity</h3>
+                <p>Velocity is a PC external that's overall the best!</p>
+                <a href="#" class="download-btn">Download</a>
+            </div>
+            <div class="exploit-box">
+                <img src="https://cdn.discordapp.com/attachments/1291894582992437318/1291927700470235207/image.png?ex=6701e0ee&is=67008f6e&hm=9bb90480c88862c6a9b93c0d554e33011bf55e266b4435f3925c10562218d2b3&" alt="Voltage V1">
+                <h3>Voltage V1</h3>
+                <p>Voltage is a powerful Roblox script!</p>
+                <a href="#" class="download-btn">Download</a>
+            </div>
+            <div class="exploit-box">
+                <img src="https://cdn.discordapp.com/attachments/1291894582992437318/1291927700470235207/image.png?ex=6701e0ee&is=67008f6e&hm=9bb90480c88862c6a9b93c0d554e33011bf55e266b4435f3925c10562218d2b3&" alt="Voltage V2">
+                <h3>Voltage V2</h3>
+                <p>Voltage is a powerful Roblox script!</p>
+                <a href="#" class="download-btn">Download</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="team" class="content">
+        <h2>Our Team</h2>
+        <p>Meet the talented individuals behind Ultra Softworks.</p>
+    </div>
+
+    <div id="discord" class="content">
+        <h2>Join Our Discord</h2>
+        <p>Click <a href="https://discord.com" target="_blank" style="color: #4da6ff;">here</a> to join our Discord community.</p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('content');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active');
+            }
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
