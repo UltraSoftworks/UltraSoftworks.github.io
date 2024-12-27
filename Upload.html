@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-Exploits - Upload</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: white;
+            animation: colorFade 10s infinite alternate;
+        }
+
+        @keyframes colorFade {
+            0% { color: red; }
+            50% { color: purple; }
+            100% { color: blue; }
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .form-container input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #333;
+            color: white;
+        }
+
+        .form-container label {
+            font-size: 1.2em;
+            color: white;
+        }
+
+        .form-container button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .form-container button:hover {
+            background-color: darkblue;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: green;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>All-Exploits</h1>
+    <h2>Upload</h2>
+
+    <div class="form-container">
+        <input type="text" id="exploitName" placeholder="Exploit Name Here" />
+        
+        <label for="imageLink">Paste your link to the image here. For information to do this, click <a href="https://www.google.com" target="_blank">HERE</a></label>
+        <input type="text" id="imageLink" placeholder="Image Link Here" />
+        
+        <input type="text" id="purchaseLink" placeholder="Download or Purchase Link Here" />
+
+        <button id="submitBtn">Submit</button>
+    </div>
+
+    <div id="notification" class="notification">
+        <strong>Done!</strong><br>Your upload was submitted. Wait for approval.
+    </div>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            // Get form input values
+            const exploitName = document.getElementById('exploitName').value;
+            const imageLink = document.getElementById('imageLink').value;
+            const purchaseLink = document.getElementById('purchaseLink').value;
+
+            // Display notification
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 5000); // Hide notification after 5 seconds
+
+            // Send data to webhook
+            const webhookURL = 'https://discord.com/api/webhooks/1322071808668733440/p105zv-lYsZ8LYjma1e7sUFKaek85vp4UWhnylC6KCWwX2GSPyxai5pgmboOBqEi9Vac';
+            const data = {
+                content: null,
+                embeds: [{
+                    title: exploitName,
+                    description: "A new exploit has been uploaded.",
+                    fields: [
+                        {
+                            name: "Image Link",
+                            value: imageLink
+                        },
+                        {
+                            name: "Download/Purchase Link",
+                            value: purchaseLink
+                        }
+                    ],
+                    color: 16711680
+                }]
+            };
+
+            // Send request to webhook
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Webhook successfully sent:', data);
+            })
+            .catch((error) => {
+                console.error('Error sending webhook:', error);
+            });
+        });
+    </script>
+</body>
+</html>
