@@ -3,150 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultra Softworks</title>
+    <title>All-Exploits</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000; /* Set background to black */
-            color: white; /* Set text color to white */
             margin: 0;
             padding: 0;
-        }
-        .header {
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
-        }
-        .header h1 {
+            background-color: black;
             color: white;
-            margin: 0;
-        }
-        .nav {
+            font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
-            background-color: #444;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100vh;
+            overflow-x: hidden;
         }
-        .nav a {
-            padding: 15px 20px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            text-align: center;
+
+        h1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 20px;
+            font-size: 2em;
+            animation: colorFade 10s infinite alternate;
         }
-        .nav a:hover {
-            background-color: #555;
+
+        @keyframes colorFade {
+            0% { color: red; }
+            50% { color: purple; }
+            100% { color: blue; }
         }
-        .content {
-            padding: 20px;
-            display: none;
-        }
-        .exploits-section {
+
+        .box-container {
             display: flex;
-            justify-content: center;
-            gap: 20px; /* Reduce spacing between boxes */
             flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 20px;
+            margin-top: 80px;
+            padding-left: 20px;
         }
-        .exploit-box {
-            background-color: #222;
+
+        .box {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
             width: 250px;
-            margin: 10px;
-            padding: 10px;
+            text-align: center;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .exploit-box img {
+
+        .box img {
             width: 100%;
-            height: 180px;
-            border-radius: 10px 10px 0 0;
-        }
-        .exploit-box h3 {
-            text-align: center;
-            margin: 10px 0;
-        }
-        .exploit-box p {
-            text-align: center;
-            padding: 0 10px;
-        }
-        .download-btn {
-            display: block;
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            background-color: #28a745;
-            color: white;
-            text-align: center;
-            text-decoration: none;
+            height: 150px;
+            object-fit: contain;
             border-radius: 5px;
+            margin-bottom: 10px;
         }
-        .download-btn:hover {
-            background-color: #218838;
+
+        .box img.cloudy {
+            height: 160px; /* Slightly increase the height for consistency */
         }
-        .active {
-            display: block;
+
+        .box h2 {
+            margin: 10px 0;
+            font-size: 1.2em;
         }
+
+        .box button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .box button:hover {
+            background-color: darkblue;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        /* Tabs Styling */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tab {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 15px 30px;
+            cursor: pointer;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .tab:hover {
+            background-color: rgba(0, 0, 255, 0.5);
+        }
+
+        /* Discord Tab */
+        .discord-tab {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .discord-tab:hover {
+            background-color: #7289DA;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Ultra Softworks</h1>
-    </div>
+    <h1>All-Exploits</h1>
 
-    <div class="nav">
-        <a href="#" onclick="showSection('exploits')">Exploits</a>
-        <a href="#" onclick="showSection('team')">Team</a>
-        <a href="#" onclick="showSection('discord')">Discord</a>
-    </div>
+    <div class="box-container">
+        <!-- Seliware Box -->
+        <div class="box">
+            <h2>Seliware</h2>
+            <img src="https://media.discordapp.net/attachments/1311028511603167242/1311384629504381018/image.png?ex=676ee51c&is=676d939c&hm=807562b066b1d80e749cd1aaac3d73ec489ddf63ac359729f006f53f974e957f&=&format=webp&quality=lossless" alt="Seliware">
+            <button onclick="window.location.href='https://discord.gg/zovware'">Purchase</button>
+        </div>
 
-    <div id="exploits" class="content active">
-        <h2>Available Exploits</h2>
-        <div class="exploits-section">
-            <div class="exploit-box">
-                <img src="https://cdn.discordapp.com/attachments/1291895264914706454/1291926604641075211/image.png?ex=6701dfe9&is=67008e69&hm=cb91054fff94f10d23f1511edb3bcc4262045ef60bd506510d9639beeb74938e&" alt="Ultra X">
-                <h3>Ultra X</h3>
-                <p>Ultra X is a level 8, 100% UNC Roblox Windows PC Executor.</p>
-                <a href="#" class="download-btn">Download</a>
-            </div>
-            <div class="exploit-box">
-                <img src="https://cdn.discordapp.com/attachments/1291894380684382218/1291927125879685240/image.png?ex=6701e065&is=67008ee5&hm=de05564fb3d931788b3245459a7a9a989fcdad94ad95dc17452542dc01604c53&" alt="Velocity">
-                <h3>Velocity</h3>
-                <p>Velocity is a PC external that's overall the best!</p>
-                <a href="#" class="download-btn">Download</a>
-            </div>
-            <div class="exploit-box">
-                <img src="https://cdn.discordapp.com/attachments/1291894582992437318/1291927700470235207/image.png?ex=6701e0ee&is=67008f6e&hm=9bb90480c88862c6a9b93c0d554e33011bf55e266b4435f3925c10562218d2b3&" alt="Voltage V1">
-                <h3>Voltage V1</h3>
-                <p>Voltage is a powerful Roblox script!</p>
-                <a href="#" class="download-btn">Download</a>
-            </div>
-            <div class="exploit-box">
-                <img src="https://cdn.discordapp.com/attachments/1291894582992437318/1291927700470235207/image.png?ex=6701e0ee&is=67008f6e&hm=9bb90480c88862c6a9b93c0d554e33011bf55e266b4435f3925c10562218d2b3&" alt="Voltage V2">
-                <h3>Voltage V2</h3>
-                <p>Voltage is a powerful Roblox script!</p>
-                <a href="#" class="download-btn">Download</a>
-            </div>
+        <!-- AWP.GG Box -->
+        <div class="box">
+            <h2>AWP.GG</h2>
+            <img src="https://cdn.discordapp.com/attachments/1318999428144693281/1322063663460388865/image.png?ex=676f833c&is=676e31bc&hm=2ecd60521e42143819f536555504bb449d55ba002a2129d84f5d532a16627622&" alt="AWP.GG">
+            <button onclick="window.location.href='https://ilya.sellsn.io/'">Purchase</button>
+        </div>
+
+        <!-- Nihon Box -->
+        <div class="box">
+            <h2>Nihon</h2>
+            <img src="https://images-ext-1.discordapp.net/external/sFFOPHIvpheYeAm3Ny9ilqR0HR-g4-vIEyAJSoJucj4/%3Fscale-down-to%3D1024/https/framerusercontent.com/images/GT7yezB70xcS6codWhg3zuo10uc.png?format=webp&quality=lossless&width=912&height=527" alt="Nihon">
+            <button onclick="window.location.href='https://nihon.lol'">Purchase</button>
+        </div>
+
+        <!-- Synapse Z Box -->
+        <div class="box">
+            <h2>Synapse Z</h2>
+            <img src="https://media.discordapp.net/attachments/1269545071578189854/1295126312524189778/Screenshot_2024-10-13_164903.png?ex=676f12df&is=676dc15f&hm=94e400f9d31e903cabba08a9f60c44511fed9d08877d7e62f130b930721ff6d5&=&format=webp&quality=lossless" alt="Synapse Z">
+            <button onclick="window.location.href='https://synapsez.net'">Purchase</button>
+        </div>
+
+        <!-- Wave Box -->
+        <div class="box">
+            <h2>Wave</h2>
+            <img src="https://i.ytimg.com/vi/s8ZPMLm_sGA/maxresdefault.jpg" alt="Wave">
+            <button onclick="window.location.href='https://getwave.gg/'">Purchase</button>
+        </div>
+
+        <!-- Cloudy Box -->
+        <div class="box">
+            <h2>Cloudy</h2>
+            <img class="cloudy" src="https://media.discordapp.net/attachments/1311925592517509140/1311929292695015447/Screenshot_2024-11-29_003159.png?ex=676ee61d&is=676d949d&hm=d98cdce3c1fdddb2ffcfe1715afa5d6e2b4428ed141036015523f150d97851c0&=&format=webp&quality=lossless" alt="Cloudy">
+            <button onclick="window.location.href='https://discord.gg/getcloudy'">Download</button>
         </div>
     </div>
 
-    <div id="team" class="content">
-        <h2>Our Team</h2>
-        <p>Meet the talented individuals behind Ultra Softworks.</p>
+    <div class="box-container">
+        <!-- Xeno Box -->
+        <div class="box">
+            <h2>Xeno</h2>
+            <img src="https://media.discordapp.net/attachments/1311924782060670996/1311924985656512632/Screenshot_2024-11-24_030101.png?ex=676ee21a&is=676d909a&hm=40fac2efdd6cfdff8cb803ae41c57e4662353412e933eec7587a250ac56612a6&=&format=webp&quality=lossless" alt="Xeno">
+            <button onclick="window.location.href='#'">Download</button>
+        </div>
+
+        <!-- SynX Remake Box -->
+        <div class="box">
+            <h2>SynX Remake</h2>
+            <img src="https://media.discordapp.net/attachments/1311928952222257213/1311929131658772642/Screenshot_2024-11-29_003503.png?ex=676ee5f7&is=676d9477&hm=e8d8317b5ae015fa2d3a70aebb95c6e7fb049286bbf81612b6145e9102c5ff27&=&format=webp&quality=lossless" alt="SynX Remake">
+            <button onclick="window.location.href='#'">Download</button>
+        </div>
     </div>
 
-    <div id="discord" class="content">
-        <h2>Join Our Discord</h2>
-        <p>Click <a href="https://discord.com" target="_blank" style="color: #4da6ff;">here</a> to join our Discord community.</p>
+    <!-- Tabs -->
+    <div class="tabs-container">
+        <div class="tab" onclick="window.location.href='#'">Upload</div>
+        <div class="tab" onclick="window.location.href='#'">Chat</div>
     </div>
 
-    <script>
-        function showSection(sectionId) {
-            var sections = document.getElementsByClassName('content');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.remove('active');
-            }
-            document.getElementById(sectionId).classList.add('active');
-        }
-    </script>
+    <!-- Discord Tab -->
+    <div class="discord-tab" onclick="window.location.href='https://discord.gg/ninjaexploits'">
+        Discord
+    </div>
 
 </body>
 </html>
